@@ -32,7 +32,7 @@ type CProject struct {
 	Frame ctk.Frame
 	VBox  ctk.VBox
 
-	Packages []*CPackage
+	Packages []*cPackage
 }
 
 func (u *CUI) newProject(path string) (p *CProject) {
@@ -120,7 +120,7 @@ func (p *CProject) Refresh() {
 	for _, pkg := range p.Packages {
 		modules = append(modules, pkg.Module)
 	}
-	p.Packages = make([]*CPackage, 0)
+	p.Packages = make([]*cPackage, 0)
 
 	for _, child := range p.VBox.GetChildren() {
 		p.VBox.Remove(child)

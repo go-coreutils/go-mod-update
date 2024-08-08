@@ -30,7 +30,7 @@ var (
 	ModError      = ` 🗴 `
 )
 
-type CPackage struct {
+type cPackage struct {
 	u *CUI
 
 	Project *CProject
@@ -46,8 +46,8 @@ type CPackage struct {
 	Error ctk.Label
 }
 
-func (u *CUI) newPackage(project *CProject, module *update.Module) (p *CPackage) {
-	p = &CPackage{
+func (u *CUI) newPackage(project *CProject, module *update.Module) (p *cPackage) {
+	p = &cPackage{
 		u:       u,
 		Project: project,
 		Module:  module,
@@ -98,7 +98,7 @@ func (u *CUI) newPackage(project *CProject, module *update.Module) (p *CPackage)
 	return
 }
 
-func (p *CPackage) UpdateButton() {
+func (p *cPackage) UpdateButton() {
 	if !p.u.State().Idle() || p.Module.Err != nil || p.Module.Done {
 		p.Button.SetSensitive(false)
 	} else {
@@ -119,7 +119,7 @@ func (p *CPackage) UpdateButton() {
 	}
 }
 
-func (p *CPackage) Resize() {
+func (p *cPackage) Resize() {
 	w, _ := p.u.Display.Screen().Size()
 	p.Button.SetSizeRequest(5, 1)
 	p.Label.SetSizeRequest(-1, 1)
@@ -128,7 +128,7 @@ func (p *CPackage) Resize() {
 	p.HBox.Resize()
 }
 
-func (p *CPackage) GoModUpdate() {
+func (p *cPackage) GoModUpdate() {
 	p.Button.SetSensitive(false)
 
 	var s spinner.Spinner
