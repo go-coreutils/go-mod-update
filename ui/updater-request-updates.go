@@ -20,7 +20,7 @@ import (
 
 	"github.com/go-corelibs/spinner"
 
-	update "github.com/go-curses/coreutils-go-mod-update"
+	update "github.com/go-coreutils/go-mod-update"
 )
 
 func (u *CUI) requestUpdatesStatusUpdater(idx, moduleCount int, project, previous *CProject, symbol string, overrideMessage string) {

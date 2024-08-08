@@ -23,7 +23,7 @@ import (
 
 	clcli "github.com/go-corelibs/cli"
 
-	"github.com/go-curses/coreutils-go-mod-update/ui"
+	"github.com/go-coreutils/go-mod-update/ui"
 )
 
 const (

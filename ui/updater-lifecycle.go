@@ -29,7 +29,7 @@ import (
 	"github.com/go-curses/ctk"
 	"github.com/go-curses/ctk/lib/enums"
 
-	update "github.com/go-curses/coreutils-go-mod-update"
+	update "github.com/go-coreutils/go-mod-update"
 )
 
 func (u *CUI) startupInitChecks(ctx *cli.Context) (event cenums.EventFlag) {

@@ -21,7 +21,7 @@ import (
 	"github.com/go-curses/cdk"
 	"github.com/go-curses/cdk/log"
 
-	update "github.com/go-curses/coreutils-go-mod-update"
+	update "github.com/go-coreutils/go-mod-update"
 )
 
 func (u *CUI) requestDiscovery() {

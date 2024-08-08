@@ -5,7 +5,7 @@ Utility for updating Golang `go.mod` projects.
 ## INSTALLATION
 
 ``` shell
-> go install github.com/go-curses/coreutils-go-mod-update/cmd/go-mod-update@latest
+> go install github.com/go-coreutils/go-mod-update/cmd/go-mod-update@latest
 ```
 
 ## DOCUMENTATION

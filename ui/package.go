@@ -20,7 +20,7 @@ import (
 	"github.com/go-curses/cdk/lib/enums"
 	"github.com/go-curses/ctk"
 
-	update "github.com/go-curses/coreutils-go-mod-update"
+	update "github.com/go-coreutils/go-mod-update"
 )
 
 var (

@@ -1,4 +1,4 @@
-module github.com/go-curses/coreutils-go-mod-update
+module github.com/go-coreutils/go-mod-update
 
 go 1.21.5
 
