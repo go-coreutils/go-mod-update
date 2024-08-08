@@ -1,3 +1,7 @@
+[![Go](https://img.shields.io/badge/Go-v1.22.4-blue.svg)](https://go.dev)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](https://pkg.go.dev/github.com/go-coreutils/go-mod-update)
+[![GoReportCard](https://goreportcard.com/badge/github.com/go-coreutils/go-mod-update)](https://goreportcard.com/report/github.com/go-coreutils/go-mod-update)
+
 # go-mod-update
 
 Utility for updating Golang `go.mod` projects.
