@@ -23,7 +23,7 @@ import (
 	update "github.com/go-coreutils/go-mod-update"
 )
 
-func (u *cUI) requestUpdatesStatusUpdater(idx, moduleCount int, project, previous *CProject, symbol string, overrideMessage string) {
+func (u *cUI) requestUpdatesStatusUpdater(idx, moduleCount int, project, previous *cProject, symbol string, overrideMessage string) {
 	if project != nil {
 		project.Frame.SetLabel(symbol + " " + project.Name)
 		project.Frame.Resize()
@@ -55,7 +55,7 @@ func (u *cUI) requestUpdates() {
 	var s spinner.Spinner
 	var idx, moduleCount int
 	var overrideMessage string
-	var project, previous *CProject
+	var project, previous *cProject
 
 	for _, p := range u.Projects {
 		for _, pkg := range p.Packages {

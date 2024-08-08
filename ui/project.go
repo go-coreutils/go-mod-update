@@ -23,7 +23,7 @@ import (
 	update "github.com/go-coreutils/go-mod-update"
 )
 
-type CProject struct {
+type cProject struct {
 	u *cUI
 
 	Path string
@@ -35,8 +35,8 @@ type CProject struct {
 	Packages []*cPackage
 }
 
-func (u *cUI) newProject(path string) (p *CProject) {
-	p = &CProject{
+func (u *cUI) newProject(path string) (p *cProject) {
+	p = &cProject{
 		Path: path,
 		Name: filepath.Base(path),
 		u:    u,
@@ -54,7 +54,7 @@ func (u *cUI) newProject(path string) (p *CProject) {
 	return
 }
 
-func (p *CProject) setTitle() {
+func (p *cProject) setTitle() {
 	if count := p.Pending(); count > 0 {
 		p.Frame.SetLabel(fmt.Sprintf("%s (%d pending)", p.Name, count))
 	} else {
@@ -62,14 +62,14 @@ func (p *CProject) setTitle() {
 	}
 }
 
-func (p *CProject) UpdateTitle() {
+func (p *cProject) UpdateTitle() {
 	p.setTitle()
 	p.Frame.Resize()
 	p.u.Display.RequestDraw()
 	p.u.Display.RequestShow()
 }
 
-func (p *CProject) Add(modules ...*update.Module) {
+func (p *cProject) Add(modules ...*update.Module) {
 	for _, module := range modules {
 		pkg := p.u.newPackage(p, module)
 		p.Packages = append(p.Packages, pkg)
@@ -83,7 +83,7 @@ func (p *CProject) Add(modules ...*update.Module) {
 	return
 }
 
-func (p *CProject) Height() (h int) {
+func (p *cProject) Height() (h int) {
 	if h = 2; len(p.Packages) > 0 {
 		for _, pkg := range p.Packages {
 			h += 1 // the module update itself
@@ -95,7 +95,7 @@ func (p *CProject) Height() (h int) {
 	return
 }
 
-func (p *CProject) Resize() {
+func (p *cProject) Resize() {
 	w := p.u.getContentWidth()
 	h := p.Height()
 
@@ -103,7 +103,7 @@ func (p *CProject) Resize() {
 	p.Frame.Resize()
 }
 
-func (p *CProject) Pending() (count int) {
+func (p *cProject) Pending() (count int) {
 	for _, pkg := range p.Packages {
 		if !pkg.Module.Done {
 			count += 1
@@ -112,7 +112,7 @@ func (p *CProject) Pending() (count int) {
 	return
 }
 
-func (p *CProject) Refresh() {
+func (p *cProject) Refresh() {
 	p.Frame.Freeze()
 	defer p.Frame.Thaw()
 

@@ -37,10 +37,10 @@ func (u *cUI) requestDiscovery() {
 
 	var idx int
 	var s spinner.Spinner
-	var project, previous *CProject
+	var project, previous *cProject
 	projectCount := len(u.paths)
 
-	u.Projects = make([]*CProject, 0)
+	u.Projects = make([]*cProject, 0)
 
 	for _, child := range u.ProjectList.GetChildren() {
 		u.ProjectList.Remove(child)

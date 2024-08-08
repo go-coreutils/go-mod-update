@@ -14,7 +14,7 @@
 
 package ui
 
-type Projects []*CProject
+type Projects []*cProject
 
 func (p Projects) Height() (height int) {
 	for _, project := range p {
