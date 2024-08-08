@@ -33,7 +33,7 @@ var gAccelMap string
 //go:embed go-mod-update.styles
 var gStyles string
 
-type CUI struct {
+type cUI struct {
 	App ctk.Application
 
 	ContentVBox ctk.VBox
@@ -65,8 +65,8 @@ type CUI struct {
 	sync.RWMutex
 }
 
-func NewUI(name string, usage string, description string, version string, tag string, title string, ttyPath string) (u *CUI) {
-	u = &CUI{
+func NewUI(name string, usage string, description string, version string, tag string, title string, ttyPath string) (u *cUI) {
+	u = &cUI{
 		App:     ctk.NewApplication(name, usage, description, version, tag, title, ttyPath),
 		modLock: &sync.RWMutex{},
 	}
@@ -99,7 +99,7 @@ func NewUI(name string, usage string, description string, version string, tag st
 	return
 }
 
-func (u *CUI) Run(argv []string) (err error) {
+func (u *cUI) Run(argv []string) (err error) {
 	err = u.App.Run(argv)
 	return
 }

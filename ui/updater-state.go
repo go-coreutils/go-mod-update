@@ -34,14 +34,14 @@ func (s State) Idle() (idle bool) {
 	return
 }
 
-func (u *CUI) State() (state State) {
+func (u *cUI) State() (state State) {
 	u.RLock()
 	defer u.RUnlock()
 	state = u.state
 	return
 }
 
-func (u *CUI) SetState(state State) {
+func (u *cUI) SetState(state State) {
 	if !state.Valid() {
 		panic("invalid State given")
 	}
@@ -59,7 +59,7 @@ func (u *CUI) SetState(state State) {
 	u.refreshUI()
 }
 
-func (u *CUI) setIdleState() {
+func (u *cUI) setIdleState() {
 	u.refreshUpdateButton()
 	u.refreshDiscoverButton()
 	u.StateSpinner.StopSpinning()
@@ -71,7 +71,7 @@ func (u *CUI) setIdleState() {
 	u.Display.RequestShow()
 }
 
-func (u *CUI) setDiscoveryState() {
+func (u *cUI) setDiscoveryState() {
 	u.refreshUpdateButton()
 	u.refreshDiscoverButton()
 	u.StateSpinner.Show()
@@ -82,7 +82,7 @@ func (u *CUI) setDiscoveryState() {
 	u.Display.RequestShow()
 }
 
-func (u *CUI) setUpdatingState() {
+func (u *cUI) setUpdatingState() {
 	u.refreshUpdateButton()
 	u.refreshDiscoverButton()
 	u.StateSpinner.Show()

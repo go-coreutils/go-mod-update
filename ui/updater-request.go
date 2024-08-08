@@ -14,6 +14,6 @@
 
 package ui
 
-func (u *CUI) requestQuit() {
+func (u *cUI) requestQuit() {
 	u.Display.RequestQuit()
 }

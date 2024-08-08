@@ -14,7 +14,7 @@
 
 package ui
 
-func (u *CUI) getContentWidth() (w int) {
+func (u *cUI) getContentWidth() (w int) {
 	if screen := u.Display.Screen(); screen != nil {
 		w, _ = screen.Size()
 		w -= 2
@@ -25,7 +25,7 @@ func (u *CUI) getContentWidth() (w int) {
 	return
 }
 
-func (u *CUI) resizeUI() {
+func (u *cUI) resizeUI() {
 	u.ProjectList.Freeze()
 
 	contentWidth := u.getContentWidth()
@@ -48,7 +48,7 @@ func (u *CUI) resizeUI() {
 	u.Display.RequestShow()
 }
 
-func (u *CUI) refreshUI() {
+func (u *cUI) refreshUI() {
 	u.Window.Freeze()
 	u.Projects.Refresh()
 	u.refreshUpdateButton()
@@ -56,7 +56,7 @@ func (u *CUI) refreshUI() {
 	u.resizeUI()
 }
 
-func (u *CUI) refreshDiscoverButton() {
+func (u *cUI) refreshDiscoverButton() {
 	if !u.State().Idle() {
 		u.DiscoverButton.SetSensitive(false)
 		u.DiscoverButton.Hide()
@@ -66,7 +66,7 @@ func (u *CUI) refreshDiscoverButton() {
 	u.DiscoverButton.Show()
 }
 
-func (u *CUI) refreshUpdateButton() {
+func (u *cUI) refreshUpdateButton() {
 	if u.State().Idle() {
 		for _, project := range u.Projects {
 			for _, pkg := range project.Packages {
