@@ -23,7 +23,7 @@ USAGE:
    go-mod-update [options] [/source/paths ...]
 
 VERSION:
-   v0.2.4 (trunk)
+   v0.3.0 (trunk)
 
 DESCRIPTION:
    command line utility for updating golang dependencies
