@@ -1,6 +1,6 @@
 module github.com/go-coreutils/go-mod-update
 
-go 1.21.5
+go 1.22.4
 
 require (
 	github.com/Masterminds/semver/v3 v3.2.1
